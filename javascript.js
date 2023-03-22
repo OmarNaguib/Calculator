@@ -23,6 +23,17 @@ numbers.forEach(number => { number.addEventListener("click",()=> {
 })
 });
 
+operators=document.querySelectorAll(".operator");
+operators.forEach(operator => { operator.addEventListener("click",()=> {
+        if (data.pointer === "first" && data["first"]) {
+            data.operator=operator.textContent;
+            setPointer("second");
+        }
+        console.table(data)
+    })
+});
+
+
 
 
 data = {
