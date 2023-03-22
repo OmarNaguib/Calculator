@@ -33,7 +33,10 @@ operators.forEach(operator => { operator.addEventListener("click",()=> {
     })
 });
 
-
+evaluate=document.querySelector("#enter")
+evaluate.addEventListener("click",() => {data.result=operate(data.first,data.second,data.operator)
+                                        console.table(data)
+})
 
 
 data = {
