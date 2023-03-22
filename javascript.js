@@ -3,8 +3,8 @@ function Data(){
     this.second="";
     this.operator="";
     this.pointer="first";
-    this.operate= () => {data.result=Math.round(operate(data.first,data.second,data.operator)*100)/100
-    console.table(data);
+    this.operate= () => {this.result=Math.round(operate(this.first,this.second,this.operator)*100)/100
+    console.table(this);
 }
 }
 data = new Data();
@@ -44,6 +44,7 @@ operators.forEach(operator => { operator.addEventListener("click",()=> {
             setPointer("second");
         }
         else if(data.pointer === "second" && data["second"]){
+            data.operate()
             data.first=data.result
             data.second=""
             data.operator=operator.textContent
@@ -54,7 +55,9 @@ operators.forEach(operator => { operator.addEventListener("click",()=> {
 });
 
 evaluate=document.querySelector("#enter")
-evaluate.addEventListener("click",data.operate)
+evaluate.addEventListener("click",() =>{
+    if (data.first && data.second && data.operator ) data.operate()
+})
 
 
 
