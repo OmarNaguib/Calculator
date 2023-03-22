@@ -13,11 +13,12 @@ function operate(first, second, operator) {
 }
 
 function setPointer(value) {data.pointer=value}
+function clearData() {data=new Data();}
 
 
 numbers=document.querySelectorAll(".number");
 numbers.forEach(number => { number.addEventListener("click",()=> {
-    if (data.result) {data.clear()}
+    if (data.result) {clearData()}
     data[data.pointer]+=number.textContent
     console.table(data)
 })
