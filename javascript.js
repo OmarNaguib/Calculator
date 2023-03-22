@@ -5,17 +5,23 @@ function Data(){
     this.pointer="first";
     this.operate= () => {this.result=Math.round(operate(this.first,this.second,this.operator)*100)/100
     console.table(this);
-}
+    }
+    this.display = () => `${this.first} ${this.operator} ${this.second} = ${this.result}`
+    
 }
 data = new Data();
 
+function clearData() {data=new Data();}
 
 
 // functions for add sub mul div
 function add(first,second) {return +first + +second;}
 function subtract(first,second) {return first - second;}
 function multiply(first,second) {return first * second;}
-function divide(first,second) {return first / second;}
+function divide(first,second) {
+    if (first / second === Infinity) {return "Your'e a son of a bitch"}
+    return first / second;
+}
 
 function operate(first, second, operator) {
     if (operator === "+") {return add(first,second);}
@@ -26,10 +32,9 @@ function operate(first, second, operator) {
 }
 
 function setPointer(value) {data.pointer=value}
-function clearData() {data=new Data();}
 
 
-numbers=document.querySelectorAll(".number");
+const numbers=document.querySelectorAll(".number");
 numbers.forEach(number => { number.addEventListener("click",()=> {
     if (data.result) {clearData()}
     data[data.pointer]+=number.textContent
@@ -37,7 +42,7 @@ numbers.forEach(number => { number.addEventListener("click",()=> {
 })
 });
 
-operators=document.querySelectorAll(".operator");
+const operators=document.querySelectorAll(".operator");
 operators.forEach(operator => { operator.addEventListener("click",()=> {
         if (data.pointer === "first" && data["first"]) {
             data.operator=operator.textContent;
@@ -54,11 +59,13 @@ operators.forEach(operator => { operator.addEventListener("click",()=> {
     })
 });
 
-evaluate=document.querySelector("#enter")
+const evaluate=document.querySelector("#enter")
 evaluate.addEventListener("click",() =>{
     if (data.first && data.second && data.operator ) data.operate()
 })
 
+const clearButton=document.querySelector("#clear")
+clearButton.addEventListener("click",clear)
 
 
 
