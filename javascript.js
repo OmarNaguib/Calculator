@@ -38,22 +38,14 @@ evaluate.addEventListener("click",() => {data.result=operate(data.first,data.sec
                                         console.table(data)
 })
 
-
-data = {
-    first: "",
-    second: "",
-    operator:"",
-    pointer :"first",
-    clear() {
-        this.first="";
-        this.second="";
-        this.operator="";
-        this.pointer="first";
-        delete this.result
-    }
-    
-
+function Data(){
+    this.first="";
+    this.second="";
+    this.operator="";
+    this.pointer="first";
 }
+data = new Data();
+
 
 
 
