@@ -35,7 +35,7 @@ operators.forEach(operator => { operator.addEventListener("click",()=> {
 });
 
 evaluate=document.querySelector("#enter")
-evaluate.addEventListener("click",() => {data.result=operate(data.first,data.second,data.operator)
+evaluate.addEventListener("click",() => {data.result=Math.round(operate(data.first,data.second,data.operator)*100)/100
                                         console.table(data)
 })
 
