@@ -94,7 +94,7 @@ evaluate.addEventListener("click",() =>{
 const clearButton=document.querySelector("#clear")
 clearButton.addEventListener("click",()=>{clearData()})
 
-const dotButton = document.querySelector("#\\.")
+const dotButton = document.querySelector("#point")
 dotButton.addEventListener("click",() => {
     if(!data[data.pointer+"-dot"]) {
         data[data.pointer+"-dot"] = true
@@ -105,6 +105,12 @@ dotButton.addEventListener("click",() => {
 
 const delButton=document.querySelector("#Backspace")
 delButton.addEventListener("click",()=> {data.backspace()})
+
+document.addEventListener("keydown",(e) => {
+    key=document.querySelector(`button[data-key="${e.key}"]`);
+    if (!key) {return}
+    key.click()
+})
 
 
 
