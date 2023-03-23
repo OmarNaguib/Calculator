@@ -6,14 +6,15 @@ function Data(){
     this.operate= () => {this.result=Math.round(operate(this.first,this.second,this.operator)*100)/100
     console.table(this);
     }
-    this.screen=document.querySelector("#display")
-    this.display = () => {this.screen.textContent= `${this.first} ${this.operator} ${this.second}  ${this.result?"= "+this.result:""}`}
+    this.display = () => {screen.textContent= `${this.first} ${this.operator} ${this.second}  ${this.result?"= "+this.result:""}`}
     
 }
 let data = new Data();
+const screen=document.querySelector("#display")
 
 function clearData() {
     data=new Data();
+    data.display()
 }
 
 
