@@ -6,22 +6,23 @@ function Data(){
     this.operate= () => {this.result=Math.round(operate(this.first,this.second,this.operator)*100)/100
     console.table(this);
     }
-    this.display = () => `${this.first} ${this.operator} ${this.second} = ${this.result}`
+    this.screen=document.querySelector("#display")
+    this.display = () => {this.screen.textContent= `${this.first} ${this.operator} ${this.second}  ${this.result?"= "+this.result:""}`}
     
 }
-data = new Data();
+let data = new Data();
 
-function clearData() {data=new Data();}
+function clearData() {
+    data=new Data();
+}
 
 
 // functions for add sub mul div
 function add(first,second) {return +first + +second;}
 function subtract(first,second) {return first - second;}
 function multiply(first,second) {return first * second;}
-function divide(first,second) {
-    if (first / second === Infinity) {return "Your'e a son of a bitch"}
-    return first / second;
-}
+function divide(first,second) {if (first / second === Infinity) {}
+return first / second;}
 
 function operate(first, second, operator) {
     if (operator === "+") {return add(first,second);}
@@ -39,6 +40,7 @@ numbers.forEach(number => { number.addEventListener("click",()=> {
     if (data.result) {clearData()}
     data[data.pointer]+=number.textContent
     console.table(data)
+    data.display()
 })
 });
 
@@ -56,16 +58,18 @@ operators.forEach(operator => { operator.addEventListener("click",()=> {
             delete data.result
         }
         console.table(data)
+        data.display()
     })
 });
 
 const evaluate=document.querySelector("#enter")
 evaluate.addEventListener("click",() =>{
     if (data.first && data.second && data.operator ) data.operate()
+    data.display()
 })
 
 const clearButton=document.querySelector("#clear")
-clearButton.addEventListener("click",clear)
+clearButton.addEventListener("click",()=>{clearData()})
 
 
 
