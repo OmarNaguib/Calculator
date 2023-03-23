@@ -7,10 +7,27 @@ function Data(){
     console.table(this);
     }
     this.display = () => {screen.textContent= `${this.first} ${this.operator} ${this.second}  ${this.result?"= "+this.result:""}`}
+    this.backspace = () => {
+        text=this[this.pointer]
+        char=text.charAt(text.length-1)
+        if (this.result) this.result=""
+        if (!char) {
+            this.operator="";
+            this.pointer="first"
+        }
+        else if (char == ".") {
+            this[data.pointer+"-dot"] = false
+            this[this.pointer] = text.slice(0,text.length-1)
+        }
+        else {this[this.pointer] = text.slice(0,text.length-1)}
+        this.display()
+    }
+    }
+        
     
-}
-let data = new Data();
 const screen=document.querySelector("#display")
+let data = new Data();
+
 
 function clearData() {
     data=new Data();
@@ -82,8 +99,12 @@ dotButton.addEventListener("click",() => {
     if(!data[data.pointer+"-dot"]) {
         data[data.pointer+"-dot"] = true
         data[data.pointer] +="."
+        data.display()
     }
 })
+
+const delButton=document.querySelector("#del")
+delButton.addEventListener("click",()=> {data.backspace()})
 
 
 
