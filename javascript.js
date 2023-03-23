@@ -80,7 +80,7 @@ operators.forEach(operator => { operator.addEventListener("click",()=> {
     })
 });
 
-const evaluate=document.querySelector("#enter")
+const evaluate=document.querySelector("#Enter")
 evaluate.addEventListener("click",() =>{
     if (data.first && data.second && data.operator ) data.operate()
     if (data.result == Infinity) {
@@ -94,7 +94,7 @@ evaluate.addEventListener("click",() =>{
 const clearButton=document.querySelector("#clear")
 clearButton.addEventListener("click",()=>{clearData()})
 
-const dotButton = document.querySelector("#point")
+const dotButton = document.querySelector("#\\.")
 dotButton.addEventListener("click",() => {
     if(!data[data.pointer+"-dot"]) {
         data[data.pointer+"-dot"] = true
@@ -103,8 +103,11 @@ dotButton.addEventListener("click",() => {
     }
 })
 
-const delButton=document.querySelector("#del")
+const delButton=document.querySelector("#Backspace")
 delButton.addEventListener("click",()=> {data.backspace()})
+
+
+
 
 
 
