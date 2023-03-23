@@ -66,7 +66,12 @@ operators.forEach(operator => { operator.addEventListener("click",()=> {
 const evaluate=document.querySelector("#enter")
 evaluate.addEventListener("click",() =>{
     if (data.first && data.second && data.operator ) data.operate()
-    data.display()
+    if (data.result == Infinity) {
+        data.result ="Your Mama";
+        data.display();
+        data = new Data();
+    }
+    else{data.display()}
 })
 
 const clearButton=document.querySelector("#clear")
