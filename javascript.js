@@ -77,6 +77,13 @@ evaluate.addEventListener("click",() =>{
 const clearButton=document.querySelector("#clear")
 clearButton.addEventListener("click",()=>{clearData()})
 
+const dotButton = document.querySelector("#point")
+dotButton.addEventListener("click",() => {
+    if(!data[data.pointer+"-dot"]) {
+        data[data.pointer+"-dot"] = true
+        data[data.pointer] +="."
+    }
+})
 
 
 
