@@ -3,9 +3,7 @@ function Data(){
     this.second="";
     this.operator="";
     this.pointer="first";
-    this.operate= () => {this.result=Math.round(operate(this.first,this.second,this.operator)*100)/100
-    console.table(this);
-    }
+    this.operate= () => {this.result=Math.round(operate(this.first,this.second,this.operator)*100)/100}
     this.display = () => {screen.textContent= `${this.first} ${this.operator} ${this.second}  ${this.result?"= "+this.result:""}`}
     this.backspace = () => {
         text=this[this.pointer]
@@ -57,7 +55,6 @@ const numbers=document.querySelectorAll(".number");
 numbers.forEach(number => { number.addEventListener("click",()=> {
     if (data.result) {clearData()}
     data[data.pointer]+=number.textContent
-    console.table(data)
     data.display()
 })
 });
@@ -75,7 +72,6 @@ operators.forEach(operator => { operator.addEventListener("click",()=> {
             data.operator=operator.textContent
             delete data.result
         }
-        console.table(data)
         data.display()
     })
 });
