@@ -3,7 +3,7 @@ function Data(){
     this.second="";
     this.operator="";
     this.pointer="first";
-    this.operate= () => {this.result=Math.round(operate(this.first,this.second,this.operator)*100)/100}
+    this.operate= () => {this.result=(Math.round(operate(this.first,this.second,this.operator)*100)/100).toString()}
     this.display = () => {screen.textContent= `${this.first} ${this.operator} ${this.second}  ${this.result?"= "+this.result:""}`}
     this.backspace = () => {
         text=this[this.pointer]
