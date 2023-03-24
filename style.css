@@ -6,6 +6,7 @@ body{
     height: 100vh;
     font-family: monospace; 
     font-size: 22px;
+    background-color:whitesmoke;
 
 }
 #container{
@@ -69,4 +70,8 @@ button.number{
 
 button.operator{
     font-size: 25px;
+}
+
+#warning{
+    padding:30px;
 }
