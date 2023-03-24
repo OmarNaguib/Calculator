@@ -20,14 +20,16 @@ body{
 }
 
 #display{
-    height: 50px;
-    width :195px;
+    min-height: 100px;
+    max-width :195px;
     text-align: end;
     line-height: 50px;
     background-color: grey;
     border-radius: 5px;
     margin-bottom: 20px;
     padding: 0px 10px;
+    flex:auto;
+    word-wrap: break-word;
 }
 
 .row{
