@@ -77,7 +77,7 @@ operators.forEach(operator => { operator.addEventListener("click",()=> {
 
 const evaluate=document.querySelector("#Enter")
 evaluate.addEventListener("click",() =>{
-    if (data.first && data.second && data.operator ) data.operate()
+    if (data.first.replace(".","") && data.second.replace(".","") && data.operator ) data.operate()
     if (data.result == Infinity) {
         data.result ="Your Mama";
         data.display();
