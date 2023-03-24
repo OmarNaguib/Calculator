@@ -66,3 +66,7 @@ button{
 button.number{
     color: silver;
 }
+
+button.operator{
+    font-size: 25px;
+}
