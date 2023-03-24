@@ -82,7 +82,7 @@ evaluate.addEventListener("click",() =>{
     if (data.result == Infinity) {
         data.result ="Your Mama";
         data.display();
-        data = new Data();
+        data.result="";
     }
     else{data.display()}
 })

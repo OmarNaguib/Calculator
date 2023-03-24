@@ -4,13 +4,15 @@ body{
     align-items: center;
     justify-content: center;
     height: 100vh;
+    font-family: monospace; 
+    font-size: 22px;
 
 }
 #container{
     display: flex;
     flex-direction: column;
     gap:5px;
-    background-color: rgb(165, 187, 207);
+    background-color: rgb(0, 0, 0);
     padding: 20px;
     border-radius: 10px ;
 
@@ -54,8 +56,13 @@ button{
     width:50px;
     height:50px;
     background-color: black;
-    color: white;
+    color: gold;
     border: 1px solid grey;
     border-radius: 5px;
+    font-size: 16px;
 
+}
+
+button.number{
+    color: silver;
 }
