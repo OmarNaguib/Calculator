@@ -68,10 +68,14 @@ button{
 
 }
 
-button.number,#point{
-    color: silver;
+button.number{
+    color: rgb(255, 255, 255);
 }
 
+#point{
+    color: white;
+    font-weight: 1000;
+}
 button.operator{
     font-size: 25px;
 }
