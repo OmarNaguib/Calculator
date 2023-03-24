@@ -6,6 +6,7 @@ body{
     height: 100vh;
     font-family: monospace; 
     font-size: 22px;
+    font-weight: 500;
     background-color:whitesmoke;
 
 }
@@ -63,10 +64,11 @@ button{
     border: 1px solid grey;
     border-radius: 5px;
     font-size: 16px;
+    font-weight: bold;
 
 }
 
-button.number{
+button.number,#point{
     color: silver;
 }
 
